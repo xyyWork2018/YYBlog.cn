@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>错题记录(二) | 一个记录错题&amp;&amp;学习的过程 | 永远不知道自己是多么的有潜力</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="wrong question">
+    <meta name="description" content="错题知识点记录1.使用break跳出Array的forEach循环2.C#程序段结果：int[][] array = new int[3][]{new int[3]{5,6,2},new int[5]{6,9,7,8,3}, new int[2]{3,2}},返回会溢出3.若用一个大小为6的数组来实现循环队列，且当rear和front的值分别为0和3。当从队列中删除一个元素，再加入两个元素后，re">
+<meta name="keywords" content="wrong question">
+<meta property="og:type" content="article">
+<meta property="og:title" content="错题记录(二)">
+<meta property="og:url" content="https://xyywork2018.github.io/2018/08/20/wrong-record-1/index.html">
+<meta property="og:site_name" content="一个记录错题&amp;&amp;学习的过程">
+<meta property="og:description" content="错题知识点记录1.使用break跳出Array的forEach循环2.C#程序段结果：int[][] array = new int[3][]{new int[3]{5,6,2},new int[5]{6,9,7,8,3}, new int[2]{3,2}},返回会溢出3.若用一个大小为6的数组来实现循环队列，且当rear和front的值分别为0和3。当从队列中删除一个元素，再加入两个元素后，re">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-08-21T01:48:06.284Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="错题记录(二)">
+<meta name="twitter:description" content="错题知识点记录1.使用break跳出Array的forEach循环2.C#程序段结果：int[][] array = new int[3][]{new int[3]{5,6,2},new int[5]{6,9,7,8,3}, new int[2]{3,2}},返回会溢出3.若用一个大小为6的数组来实现循环队列，且当rear和front的值分别为0和3。当从队列中删除一个元素，再加入两个元素后，re">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">YY</h5>
+          <a href="mailto:1204594823@qq.com" title="1204594823@qq.com" class="mail">1204594823@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-child"></i>
+                关于
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/xyyWork2018" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://weibo.com/1011804543/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">错题记录(二)</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">错题记录(二)</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-08-20T01:40:49.000Z" itemprop="datePublished" class="page-time">
+  2018-08-20
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#错题知识点记录"><span class="post-toc-number">1.</span> <span class="post-toc-text">错题知识点记录</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-wrong-record-1"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">错题记录(二)</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-08-20 09:40:49" datetime="2018-08-20T01:40:49.000Z"  itemprop="datePublished">2018-08-20</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="错题知识点记录"><a href="#错题知识点记录" class="headerlink" title="错题知识点记录"></a>错题知识点记录</h1><p>1.使用break跳出Array的forEach循环<br>2.C#程序段结果：int[][] array = new int[3][]{new int[3]{5,6,2},new int[5]{6,9,7,8,3}, new int[2]{3,2}},返回会溢出<br>3.若用一个大小为6的数组来实现循环队列，且当rear和front的值分别为0和3。当从队列中删除一个元素，再加入两个元素后，rear和front的值分别为2和4</p>
+<blockquote>
+<p>a.列队添加元素是在队尾，删除元素在对头<br>b.添加元素，尾指针rear+1；删除元素，头指针front+1</p>
+</blockquote>
+<p>4.存取任一指定序号的元素和在最后进行插入和删除运算，利用顺序表(数组)最省时间<br>5.一个5*4的矩阵，有150个长方形？（正方形也算是长方形）</p>
+<blockquote>
+<p>长任取两个点C(6,2)<em>宽任取两个点C(5,2) = 15</em> 10 = 150<br>两个点决定一条线，长为5则一共有6个点，宽为4则一共有5个点</p>
+</blockquote>
+<p>6.下面代码中可以正确操作数组元素是：<code>*(*(a+i)+j)=1</code>和<code>*(a[i]+j)=1</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">int main() &#123;</span><br><span class="line">  int a[n][m] = &#123;&#123;<span class="number">0</span>,<span class="number">0</span>&#125;,&#123;<span class="number">0</span>,<span class="number">0</span>&#125;&#125;;</span><br><span class="line">  <span class="keyword">for</span>(int i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">	<span class="keyword">for</span>(int j=<span class="number">0</span>;j&lt;n;j++)&#123;</span><br><span class="line">	  <span class="comment">//访问二维数组a的值、选项代码</span></span><br><span class="line">	&#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p><code>*(a+i)</code>与<code>a[i]</code>是等效的；<code>*(a[i]+j)</code>与<code>a[i][j]</code>等效</p>
+</blockquote>
+<p>7.下面这段代码中的时间复杂度为(m*n)<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (int i=<span class="number">0</span>;i&lt;m;i++)</span><br><span class="line"><span class="keyword">for</span> (int j=<span class="number">0</span>;j&lt;n;j++)</span><br><span class="line">a[i][j]=i*j</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>第一个for循环执行m次，第二个for循环执行n次，嵌套后，每执行一次第一个for循化，就会执行n次第二个，因此共执行m*n次</p>
+</blockquote>
+<p>8.为实现快速排序算法，待排序序列宜采用的存储方式为顺序存储<br>9.哈夫曼编码是哈夫曼树的一个应用。哈夫曼树：又被称为最优二叉树，是一种带权路径长度最短的二叉树。带权路径长度：就是树中所有的叶结点的权值乘上其到根结点的路径长度。路径长度：若根节点为0层，叶结点到根结点的路径长度为叶结点的层数。</p>
+<blockquote>
+<p>树的带权路径长度： WPL = (W1<em>L1+W2</em>L2+W3<em>L3+…+Wn</em>Ln)</p>
+</blockquote>
+<p>哈夫曼编码步骤：<br>1.对给定的n个权值，从小到大进行排序；<br>2.在给定的权值中选取两个最小的最为新构造的二叉树的左右子树(左小右大)，新二叉树的根结点的权值为其左右子树的根结点的权值之和；<br>3.从给定的去权值中删除这两棵树，并把这棵新的二叉树同样以升序排列加入到集合中；<br>4.重复第二和第三步，直到有且只有一颗二叉树为止。</p>
+<p>10.二叉排序树删除一个结点，仍是二叉排序树</p>
+<blockquote>
+<p>二叉排序树的左子树结点值均小于根结点值；右子结点值均大于根结点值</p>
+</blockquote>
+<p>11.有n个顶点、e条边且使用邻接表存储有向图进行广度优先遍历，算法的时间复制度是(n+e)</p>
+<blockquote>
+<p>若采用邻接矩阵存储，时间复杂度为O(n^2);<br>若采用邻接链表存储，时间复杂度为O(n+e);</p>
+</blockquote>
+<p>12.在排序算法中每一项都与其他各项进行比较,计算出小于该项的项的个数,以确定该项的位置叫枚举排序<br>13.四个平面最多把三维空间分成15个部分</p>
+<blockquote>
+<p>有4个平面，4个平面相连有4个顶点，有6条棱，然后形成1个三棱锥，所以是4+4+6+1=15</p>
+</blockquote>
+<p>14.线性表采用链表存储时,结点和结点内部的存储空间一般是连续的<br>15.交换机主要工作在数据链路层<br>16.<code>input:hover+.tooltip</code>可以在鼠标滑过的时候出现tip提示<br>具体样式参考代码：<a href="http://www.jq22.com/code425" target="_blank" rel="noopener">容易与简单的css三角形</a><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">placeholder</span>=<span class="string">"请输入文字"</span>/&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"tooltip"</span>&gt;</span>只能够输入英文字母、数字和下划线与中划线<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>17.回调地狱(callback hell):JS异步编程，或使用大量回调函数是，使其代码变的难以阅读和维护</p>
+<blockquote>
+<p>解决回调地狱的方法：<br>1.让代码更扁薄一些<br>2.模块化<br>3.处理每一个单独的报错<br>4.通过Promise原型的then()方法可以分别指定某个异步操作的回调</p>
+</blockquote>
+<p>18.闭包：有权限访问两一个函数作用域中的变量函数。作用在于：可以通过闭包，设计私有变量及方法。缺点：常驻内存，会增大内存使用量，使用不当很容易造成内存泄露。</p>
+<blockquote>
+<p>特点：<br>1.函数嵌套函数<br>2.内部函数可以访问外部函数的变量<br>3.参数和变量不会被回收<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> a = <span class="number">1</span>;  <span class="comment">// 变量a在test方法外是无法访问的</span></span><br><span class="line">	<span class="comment">// 嵌套一个匿名函数，通过return返回</span></span><br><span class="line">	<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="comment">// test作用域中的变量a可以在匿名函数中访问</span></span><br><span class="line">		<span class="built_in">console</span>.log(a);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 当执行test方法后，变量a所占内存并不会释放，已达到嵌套函数还可以访问的目的</span></span><br><span class="line"><span class="keyword">var</span> <span class="keyword">try</span> = test();</span><br><span class="line"><span class="keyword">try</span>();  <span class="comment">// 打印出a的值</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>如何避免this丢失：<br>1.可是用ES6中的箭头函数<br>2.将this在函数定义外层作用域保存下来传递到闭包函数中</p>
+</blockquote>
+<p>19.101枚硬币中有一枚假币，有一个无砝码的天平，在最坏情况下最少称2次，可以判断假币比真币重还是轻</p>
+<blockquote>
+<p>先把硬币分成两部分A和B，每部分各50个<br>第一种：进行第一次称重，如果A=B，则剩下的1个为假，再随便取一个硬币，进行第二次称重，就能比较出假币比真币重还是轻<br>第二种：进行第一次称重，如果A!=B，则A或B中含有假币，再将A分成A1和A2，分别是25个，进行第二次比较，如果A1=A2，则A为真币，A&gt;B，真币重；A&lt;B，假币重；<br>如果A1!=A2，则中含有假币，A&lt;B，真币重；A&gt;B，假币重</p>
+</blockquote>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+
+        
+        如需转载请注明出处哦：<a href="/2018/08/20/wrong-record-1/" target="_blank" rel="external">https://xyywork2018.github.io/2018/08/20/wrong-record-1/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://xyywork2018.github.io">
+            <img src="/img/avatar.jpg" alt="YY">
+            YY
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wrong-question/">wrong question</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://xyywork2018.github.io/2018/08/20/wrong-record-1/&title=《错题记录(二)》 — 一个记录错题&&学习的过程&pic=https://xyywork2018.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://xyywork2018.github.io/2018/08/20/wrong-record-1/&title=《错题记录(二)》 — 一个记录错题&&学习的过程&source=记录自己学习编程语言和记录自己刷体重出现的问题的过程" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://xyywork2018.github.io/2018/08/20/wrong-record-1/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《错题记录(二)》 — 一个记录错题&&学习的过程&url=https://xyywork2018.github.io/2018/08/20/wrong-record-1/&via=https://xyywork2018.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://xyywork2018.github.io/2018/08/20/wrong-record-1/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/08/21/wrong-record-2/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">错题记录(三)</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/08/18/wrong-record/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">错题记录(一)</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>YY &copy; 2015 - 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://xyywork2018.github.io/2018/08/20/wrong-record-1/&title=《错题记录(二)》 — 一个记录错题&&学习的过程&pic=https://xyywork2018.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://xyywork2018.github.io/2018/08/20/wrong-record-1/&title=《错题记录(二)》 — 一个记录错题&&学习的过程&source=记录自己学习编程语言和记录自己刷体重出现的问题的过程" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://xyywork2018.github.io/2018/08/20/wrong-record-1/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《错题记录(二)》 — 一个记录错题&&学习的过程&url=https://xyywork2018.github.io/2018/08/20/wrong-record-1/&via=https://xyywork2018.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://xyywork2018.github.io/2018/08/20/wrong-record-1/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://xyywork2018.github.io/2018/08/20/wrong-record-1/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '你怎么不见啦~';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '哦~你又回来啦~';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
