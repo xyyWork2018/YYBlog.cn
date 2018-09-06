@@ -20,19 +20,19 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="study">
-    <meta name="description" content="记录自己学习编程语言和记录自己刷体重出现的问题的过程">
-<meta name="keywords" content="study">
+    <meta name="keywords" content="JavaScript">
+    <meta name="description" content="以前学习ES6的时候觉得好难，根本看不懂好么，也不明白为什么要学ES6，直到学习了vue之后，也开发过vue项目，和ES6相结合使用，发现真的是非常方便，而且ES6中的好多语法，感觉也比以前更加规范，提供了非常便捷的方法。所以，现在趁着项目的空档期，要重新认真的学习一次ES6，不断的提升自己的知识储备。技术更新太快，要努力跟上更新的脚步，不要落的太对多！  ES6是JavaScript语言的下一代">
+<meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ES6学习总结">
 <meta property="og:url" content="https://xyywork2018.github.io/2018/08/23/study/index.html">
 <meta property="og:site_name" content="一个记录错题&amp;&amp;学习的过程">
-<meta property="og:description" content="记录自己学习编程语言和记录自己刷体重出现的问题的过程">
+<meta property="og:description" content="以前学习ES6的时候觉得好难，根本看不懂好么，也不明白为什么要学ES6，直到学习了vue之后，也开发过vue项目，和ES6相结合使用，发现真的是非常方便，而且ES6中的好多语法，感觉也比以前更加规范，提供了非常便捷的方法。所以，现在趁着项目的空档期，要重新认真的学习一次ES6，不断的提升自己的知识储备。技术更新太快，要努力跟上更新的脚步，不要落的太对多！  ES6是JavaScript语言的下一代">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-23T08:01:36.747Z">
+<meta property="og:updated_time" content="2018-09-06T07:50:10.383Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ES6学习总结">
-<meta name="twitter:description" content="记录自己学习编程语言和记录自己刷体重出现的问题的过程">
+<meta name="twitter:description" content="以前学习ES6的时候觉得好难，根本看不懂好么，也不明白为什么要学ES6，直到学习了vue之后，也开发过vue项目，和ES6相结合使用，发现真的是非常方便，而且ES6中的好多语法，感觉也比以前更加规范，提供了非常便捷的方法。所以，现在趁着项目的空档期，要重新认真的学习一次ES6，不断的提升自己的知识储备。技术更新太快，要努力跟上更新的脚步，不要落的太对多！  ES6是JavaScript语言的下一代">
     
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
@@ -153,6 +153,13 @@
 
 <div class="container body-wrap">
     
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#判断一个字符串中是否包含在另一个字符串中的几种方法"><span class="post-toc-number">1.</span> <span class="post-toc-text">判断一个字符串中是否包含在另一个字符串中的几种方法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#includes"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">includes()</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#match"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">match()</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#indexOf-和lastIndexOf"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">indexOf()和lastIndexOf()</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#find"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">find()</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
 
 <article id="post-study"
   class="post-article article-type-post fade" itemprop="blogPost">
@@ -173,7 +180,18 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            
+            <p>以前学习ES6的时候觉得好难，根本看不懂好么，也不明白为什么要学ES6，直到学习了vue之后，也开发过vue项目，和ES6相结合使用，发现真的是非常方便，而且ES6中的好多语法，感觉也比以前更加规范，提供了非常便捷的方法。所以，现在趁着项目的空档期，要重新认真的学习一次ES6，不断的提升自己的知识储备。技术更新太快，要努力跟上更新的脚步，不要落的太对多！</p>
+<blockquote>
+<p>ES6是JavaScript语言的下一代标准，可以使用Babel转码器，将ES6代码转为ES5</p>
+</blockquote>
+<p>前面的一些基础就不特意总结了，就总结一下经常使用到的方法,方便以后复习的时候查找</p>
+<h2 id="判断一个字符串中是否包含在另一个字符串中的几种方法"><a href="#判断一个字符串中是否包含在另一个字符串中的几种方法" class="headerlink" title="判断一个字符串中是否包含在另一个字符串中的几种方法"></a>判断一个字符串中是否包含在另一个字符串中的几种方法</h2><h3 id="includes"><a href="#includes" class="headerlink" title="includes()"></a>includes()</h3><p>返回布尔值true或者false,也可以传入第二个参数,从第n个位置直到字符串结束；<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> result = <span class="string">'Hello World'</span>;</span><br><span class="line">result.includes(<span class="string">'e'</span>); <span class="comment">// true</span></span><br><span class="line">result.includes(<span class="string">'e'</span>, <span class="number">9</span>); <span class="comment">// true</span></span><br></pre></td></tr></table></figure></p>
+<p>是从一个数组中匹配相同的字符串，但是数组中的每一个字符串都有相同的字符，这样返回的也会是false,通过索引匹配则会返回true<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> result = [<span class="string">'123'</span>, <span class="string">'223'</span>, <span class="string">'323'</span>];</span><br><span class="line">result.includes(<span class="string">'2'</span>); <span class="comment">// false</span></span><br><span class="line">result[<span class="number">2</span>].includes(<span class="string">'2'</span>); <span class="comment">// true</span></span><br></pre></td></tr></table></figure></p>
+<p>在我开发项目的过程，遇到一种情况，就是在新添加章节名的时候要判断章节名称是否重复。实现方法：先判断章名称是否重复，再判断节名称是否重复。后台返回给我一个章名称的数组，通过循环章名称进行匹配，使用includes()方法会存在一个问题，只要前面的字符相同，就会返回true，提示章节名称已存在。后来通过find()方法解决该问题。</p>
+<h3 id="match"><a href="#match" class="headerlink" title="match()"></a>match()</h3><p>在字符串内检索指定的值，或找到一个或多个正则表达式的匹配。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> str = <span class="string">'Hello world'</span>;</span><br><span class="line"><span class="keyword">const</span> strN = <span class="string">'1 plus 2 equal 3'</span></span><br><span class="line"><span class="built_in">console</span>.log(str.match(<span class="string">'world'</span>)); <span class="comment">// world </span></span><br><span class="line"><span class="built_in">console</span>.log(str.match(<span class="string">'WORLD'</span>)); <span class="comment">// null</span></span><br><span class="line"><span class="built_in">console</span>.log(strN.match(<span class="regexp">/\d+/g</span>)); <span class="comment">// 1,2,3  (全局匹配的正则表达式来检索字符串中的所有数字)</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="indexOf-和lastIndexOf"><a href="#indexOf-和lastIndexOf" class="headerlink" title="indexOf()和lastIndexOf()"></a>indexOf()和lastIndexOf()</h3><p>indexOf(): 指定某个字符串值在字符串中首次出现的位置,如要要是检索的字符串值没有出现，则返回-1（从左向右）<br>lastIndexOpf: 指定字符串值在字符串中最后出现的位置，在一个字符串中的指定位置从后向前搜索（从右向左）<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> str = <span class="string">'Hello world'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str.indexOf(<span class="string">'World'</span>)); <span class="comment">// -1</span></span><br><span class="line"><span class="built_in">console</span>.log(str,indexOf(<span class="string">'world'</span>)); <span class="comment">// 6</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="find"><a href="#find" class="headerlink" title="find()"></a>find()</h3><p>用于找出第一个符合条件的数组成员，参数是一个回调函数，所有数组成员一次执行该回调函数，直到找出第一个返回值为true的成员，并返回该成员，如果没有符合条件的成员，则返回undefined<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>,<span class="number">4</span>,<span class="number">-5</span>,<span class="number">10</span>].find(<span class="function">(<span class="params">item</span>) =&gt;</span> n &lt; <span class="number">0</span>) <span class="comment">// -5</span></span><br></pre></td></tr></table></figure></p>
+
         </div>
 
         <blockquote class="post-copyright">
@@ -199,7 +217,7 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/study/">study</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
 
 
             
