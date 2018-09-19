@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>数组过滤的方法 | 一个记录错题&amp;&amp;学习的过程 | 永远不知道自己是多么的有潜力</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="JavaScript">
+    <meta name="description" content="就在昨天，我对象给我推荐了一个刷题网站，叫codewars，打开之后都是英文，就有点儿抵触，哈哈，但是在我蓝朋友的强烈要求下，我今天就来用用这个网站。登录注册成功后，你可以选择你会的语言进行刷题，看到语言选择的时候，我觉得我会的实在是太少，还是要多多学习才行，做完题后进行运行，如果通过之后可以点击SUBMIT FINAL按钮，查看其它大神对这道题的写法，可以学习不一样的思路。虽然都是英文，但是慢慢">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数组过滤的方法">
+<meta property="og:url" content="https://xyywork2018.github.io/2018/09/19/study-2/index.html">
+<meta property="og:site_name" content="一个记录错题&amp;&amp;学习的过程">
+<meta property="og:description" content="就在昨天，我对象给我推荐了一个刷题网站，叫codewars，打开之后都是英文，就有点儿抵触，哈哈，但是在我蓝朋友的强烈要求下，我今天就来用用这个网站。登录注册成功后，你可以选择你会的语言进行刷题，看到语言选择的时候，我觉得我会的实在是太少，还是要多多学习才行，做完题后进行运行，如果通过之后可以点击SUBMIT FINAL按钮，查看其它大神对这道题的写法，可以学习不一样的思路。虽然都是英文，但是慢慢">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-09-19T09:27:22.524Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数组过滤的方法">
+<meta name="twitter:description" content="就在昨天，我对象给我推荐了一个刷题网站，叫codewars，打开之后都是英文，就有点儿抵触，哈哈，但是在我蓝朋友的强烈要求下，我今天就来用用这个网站。登录注册成功后，你可以选择你会的语言进行刷题，看到语言选择的时候，我觉得我会的实在是太少，还是要多多学习才行，做完题后进行运行，如果通过之后可以点击SUBMIT FINAL按钮，查看其它大神对这道题的写法，可以学习不一样的思路。虽然都是英文，但是慢慢">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">YY</h5>
+          <a href="mailto:1204594823@qq.com" title="1204594823@qq.com" class="mail">1204594823@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-child"></i>
+                关于
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/xyyWork2018" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://weibo.com/1011804543/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">数组过滤的方法</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">数组过滤的方法</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-09-18T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2018-09-19
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+
+<article id="post-study-2"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">数组过滤的方法</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-09-19 00:00:00" datetime="2018-09-18T16:00:00.000Z"  itemprop="datePublished">2018-09-19</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>就在昨天，我对象给我推荐了一个刷题网站，叫<code>codewars</code>，打开之后都是英文，就有点儿抵触，哈哈，但是在我蓝朋友的强烈要求下，我今天就来用用这个网站。登录注册成功后，你可以选择你会的语言进行刷题，看到语言选择的时候，我觉得我会的实在是太少，还是要多多学习才行，做完题后进行运行，如果通过之后可以点击<code>SUBMIT FINAL</code>按钮，查看其它大神对这道题的写法，可以学习不一样的思路。虽然都是英文，但是慢慢看还是可以看懂的。</p>
+<blockquote>
+<p>今天在网站上做了两道题，一道是通过判断字符串的长度，显示中间字符的，另一道是过滤数组，显示Number类型的字符，但是第一道题我还没有写完，不小心点了其他的地方，结果我就再也没有找到这道题T_T，如果以后刷题的时候再碰到，在重新总结</p>
+</blockquote>
+<p>说说第二道第，是从一个数组中，过滤掉string类型的字符，只显示number类型的字符<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">filter_list</span>(<span class="params">l</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> l.filter(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">		<span class="keyword">if</span> (<span class="keyword">typeof</span> item === <span class="string">'string'</span>) <span class="keyword">return</span> <span class="literal">false</span>; </span><br><span class="line">	&#125;);</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>使用ES6的filter进行过滤，实现题目中的需求，获取只有number类型的数组。后来又看了很多大神的其他写法，学习总结一下，可以用更简洁的代码实现<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">filter_list</span>(<span class="params">l</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> l.filter(<span class="function"><span class="params">item</span> =&gt;</span> <span class="keyword">typeof</span> item === <span class="string">'number'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>使用这种方法，代码就会很简洁，以后要坚持刷题，至少每天一道，积少成多，巩固一些算法知识，毕竟很多大公司面试，都会问一些算法的问题，看基础扎不扎实</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+
+        
+        如需转载请注明出处哦：<a href="/2018/09/19/study-2/" target="_blank" rel="external">https://xyywork2018.github.io/2018/09/19/study-2/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://xyywork2018.github.io">
+            <img src="/img/avatar.jpg" alt="YY">
+            YY
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://xyywork2018.github.io/2018/09/19/study-2/&title=《数组过滤的方法》 — 一个记录错题&&学习的过程&pic=https://xyywork2018.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://xyywork2018.github.io/2018/09/19/study-2/&title=《数组过滤的方法》 — 一个记录错题&&学习的过程&source=记录自己学习编程语言和记录自己刷体重出现的问题的过程" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://xyywork2018.github.io/2018/09/19/study-2/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《数组过滤的方法》 — 一个记录错题&&学习的过程&url=https://xyywork2018.github.io/2018/09/19/study-2/&via=https://xyywork2018.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://xyywork2018.github.io/2018/09/19/study-2/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/09/17/study-1/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Math算法</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>YY &copy; 2015 - 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://xyywork2018.github.io/2018/09/19/study-2/&title=《数组过滤的方法》 — 一个记录错题&&学习的过程&pic=https://xyywork2018.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://xyywork2018.github.io/2018/09/19/study-2/&title=《数组过滤的方法》 — 一个记录错题&&学习的过程&source=记录自己学习编程语言和记录自己刷体重出现的问题的过程" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://xyywork2018.github.io/2018/09/19/study-2/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《数组过滤的方法》 — 一个记录错题&&学习的过程&url=https://xyywork2018.github.io/2018/09/19/study-2/&via=https://xyywork2018.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://xyywork2018.github.io/2018/09/19/study-2/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://xyywork2018.github.io/2018/09/19/study-2/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '你怎么不见啦~';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '哦~你又回来啦~';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
